@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry World - Interactive Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .card button {
+            background-color: #1a5f7a;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chemistry World</h1>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="cards.html">Interactive Cards</a></li>
+                    <li><a href="facts.html">Facts & Quotes</a></li>
+                    <li><a href="memes.html">Meme Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="text-center mb-2">Chemistry Concepts</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Atoms">
+                    <h3>Atoms</h3>
+                    <p>The basic unit of matter and the defining structure of elements.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Molecules">
+                    <h3>Molecules</h3>
+                    <p>A group of atoms bonded together, representing the smallest fundamental unit of a chemical compound.</p>
+                    <button>Explore</button>
+                </div>
+                <div class="card">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Chemical Reactions">
+                    <h3>Chemical Reactions</h3>
+                    <p>The process that leads to the transformation of one set of chemical substances to another.</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Chemistry World. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

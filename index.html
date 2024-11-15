@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemSpark</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./assets/atom.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>ChemSpark</h1>
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="cards.html">InteractiveCards</a></li>
+                    <li><a href="facts.html">Facts&Quotes</a></li>
+                    <li><a href="memes.html">MemeGallery</a></li>
+                </ul>
+                <button id="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <video autoplay muted loop>
+            <source src="./assets/bg3.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Chem<span>Spark</span></h1>
+            <p>Explore chemistry beyond the classroom.</p>
+        </div>
+    </div>
+
+ 
+    <main>
+        <div class="container">
+            <section class="features grid">
+                <div class="feature">
+                    <img src="./assets/molecule.jpg" alt="Molecular Structure" class="icon">
+                    <h3>Molecular Structures</h3>
+                    <p>Discover the building blocks of matter</p>
+                </div>
+                <div class="feature">
+                    <img src="./assets/exp.jpg" alt="Lab Equipment" class="icon">
+                    <h3>Lab Equipment</h3>
+                    <p>Learn about essential tools for chemists</p>
+                </div>
+                <div class="feature">
+                    <img src="./assets/chemical.jpg" alt="Periodic Table" class="icon">
+                    <h3>Periodic Table</h3>
+                    <p>Explore the elements that make up our world</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Chemistry World. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+        
+            menuToggle.addEventListener("click", () => {
+                menu.classList.toggle("show");
+            });
+        });
+        
+    </script>
+</body>
+</html>

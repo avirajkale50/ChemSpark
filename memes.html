@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry World - Meme Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .meme {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .meme:hover {
+            transform: scale(1.05);
+        }
+
+        .meme img {
+            width: 100%;
+            height: auto;
+        }
+
+        .meme p {
+            padding: 0.5rem;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chemistry World</h1>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="cards.html">Interactive Cards</a></li>
+                    <li><a href="facts.html">Facts & Quotes</a></li>
+                    <li><a href="memes.html">Meme Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="text-center mb-2">Chemistry Meme Gallery</h2>
+            <div class="grid">
+                <div class="meme">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Chemistry Meme 1">
+                    <p>When you finally balance that equation</p>
+                </div>
+                <div class="meme">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Chemistry Meme 2">
+                    <p>Organic chemistry students be like...</p>
+                </div>
+                <div class="meme">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Chemistry Meme 3">
+                    <p>Periodic table jokes are in their element</p>
+                </div>
+                <div class="meme">
+                    <img src="/placeholder.svg?height=250&width=250" alt="Chemistry Meme 4">
+                    <p>Chemistry cat approves this reaction</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Chemistry World. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

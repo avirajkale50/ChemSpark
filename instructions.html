@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry World - Instructions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .carousel {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .carousel-item {
+            display: none;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-nav {
+            margin-top: 1rem;
+        }
+
+        .carousel-nav button {
+            background-color: #1a5f7a;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chemistry World</h1>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="cards.html">Interactive Cards</a></li>
+                    <li><a href="facts.html">Facts & Quotes</a></li>
+                    <li><a href="memes.html">Meme Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="text-center mb-2">Chemistry Safety Instructions</h2>
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <h3>Wear Protective Gear</h3>
+                    <p>Always wear safety goggles, gloves, and a lab coat when working with chemicals.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>No Food or Drink</h3>
+                    <p>Never eat, drink, or chew gum in the laboratory.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Proper Waste Disposal</h3>
+                    <p>Dispose of chemicals and other materials as instructed by your supervisor.</p>
+                </div>
+                <div class="carousel-nav">
+                    <button id="prevBtn">Previous</button>
+                    <button id="nextBtn">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Chemistry World. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+
+        const carousel = document.querySelector('.carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items[currentIndex].classList.remove('active');
+            items[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            let index = (currentIndex - 1 + items.length) % items.length;
+            showItem(index);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            let index = (currentIndex + 1) % items.length;
+            showItem(index);
+        });
+    </script>
+</body>
+</html>
