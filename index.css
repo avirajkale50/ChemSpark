@@ -195,34 +195,63 @@ img {
     z-index: 0;
     opacity: 0.9;
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 80%;
+    text-align: center; /* Ensures proper alignment on smaller screens */
 }
 
 .hero-content h1 {
-    font-size: 9em;
+    font-size: 10vw; /* Scales with the width of the viewport */
     margin: 0;
+    line-height: 1.2; /* Adjusts spacing between lines */
+    word-wrap: break-word; /* Prevents text overflow */
 }
-
 
 .hero-content span {
-    color:#ff0000;
+    color: #ff0000;
     margin: 0;
 }
 
-
-
 .hero-content p {
-    font-size: 1.8em;
+    font-size: 2rem; /* Scales consistently with the root font size */
     margin-top: 0.5em;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 25vw; /* Reduce the size slightly for medium screens */
+    }
+
+    .hero-content p {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 25vw; /* Scale further down for smaller screens */
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 25vw; /* Very small font size for mobile devices */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
 
 /* styling the feature grid */
 
