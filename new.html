@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chemistry Project</title>
+    <style>
+        :root {
+            --background: #ffffff;
+            --foreground: #000000;
+            --primary: #3498db;
+            --primary-foreground: #ffffff;
+            --secondary: #2ecc71;
+            --accent: #e74c3c;
+            --muted: #f1f5f9;
+            --muted-foreground: #64748b;
+            --card: #ffffff;
+            --card-foreground: #000000;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: var(--background);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            height: 3.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--muted);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .button-primary {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .button-primary:hover {
+            background-color: var(--primary);
+            filter: brightness(90%);
+        }
+
+        .button-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .button-outline:hover {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .periodic-table {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        .card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .element {
+            text-align: center;
+        }
+
+        .element-symbol {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .element-name {
+            font-size: 0.75rem;
+        }
+
+        .element-category {
+            font-size: 0.625rem;
+            color: var(--muted-foreground);
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-list {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted-foreground);
+            transition: color 0.2s;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 1rem 0;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .concept {
+            display: grid;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .concept {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .concept-image {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .concept-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .concept-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .facts {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 0;
+            text-align: center;
+            color: var(--muted-foreground);
+            background-color: var(--muted);
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.75rem;
+            }
+
+            .periodic-table {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#home">Home</a>
+            <a href="#periodic-table">Periodic Table</a>
+            <a href="#concepts">Chemistry Concepts</a>
+            <a href="#facts">Chemistry Facts</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Explore the World of Chemistry</h1>
+                <p>Dive into the fascinating realm of elements, reactions, and scientific discoveries.</p>
+                <a href="#" class="button button-primary">Get Started</a>
+                <a href="#" class="button button-outline">Learn More</a>
+            </div>
+        </section>
+
+        <section id="periodic-table" class="container">
+            <h2>Interactive Periodic Table</h2>
+            <div class="grid periodic-table" id="periodicTable"></div>
+        </section>
+
+        <section id="concepts" class="container">
+            <h2>Chemistry Concepts</h2>
+            <div class="tabs">
+                <div class="tab-list" role="tablist">
+                    <button class="tab active" role="tab" aria-selected="true" aria-controls="atomic-structure">Atomic Structure</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="chemical-bonding">Chemical Bonding</button>
+                    <button class="tab" role="tab" aria-selected="false" aria-controls="chemical-reactions">Chemical Reactions</button>
+                </div>
+                <div id="atomic-structure" class="tab-content active" role="tabpanel">
+                    <div class="concept">
+                        <div class="concept-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Atomic Structure">
+                        </div>
+                        <div>
+                            <h3>Atomic Structure</h3>
+                            <p>The atom is the basic unit of matter. It consists of a dense nucleus surrounded by a cloud of electrons. The nucleus contains positively charged protons and electrically neutral neutrons, while negatively charged electrons orbit the nucleus in energy levels or shells.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="chemical-bonding" class="tab-content" role="tabpanel">
+                    <div class="concept">
+                        <div class="concept-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Chemical Bonding">
+                        </div>
+                        <div>
+                            <h3>Chemical Bonding</h3>
+                            <p>Chemical bonding is the process by which atoms combine to form molecules or compounds. The three primary types of chemical bonds are ionic bonds, covalent bonds, and metallic bonds. These bonds determine the properties and behavior of different substances.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="chemical-reactions" class="tab-content" role="tabpanel">
+                    <div class="concept">
+                        <div class="concept-image">
+                            <img src="/placeholder.svg?height=400&width=600" alt="Chemical Reactions">
+                        </div>
+                        <div>
+                            <h3>Chemical Reactions</h3>
+                            <p>Chemical reactions occur when substances interact to form new substances with different properties. These reactions involve the breaking and forming of chemical bonds. Common types of reactions include synthesis, decomposition, single displacement, and double displacement reactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facts" class="container">
+            <h2>Chemistry Facts</h2>
+            <div class="grid facts" id="factContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Advanced Chemistry Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const elements = [
+            { symbol: 'H', name: 'Hydrogen', number: 1, category: 'Nonmetal' },
+            { symbol: 'He', name: 'Helium', number: 2, category: 'Noble Gas' },
+            { symbol: 'Li', name: 'Lithium', number: 3, category: 'Alkali Metal' },
+            { symbol: 'Be', name: 'Beryllium', number: 4, category: 'Alkaline Earth Metal' },
+            { symbol: 'B', name: 'Boron', number: 5, category: 'Metalloid' },
+            { symbol: 'C', name: 'Carbon', number: 6, category: 'Nonmetal' },
+            { symbol: 'N', name: 'Nitrogen', number: 7, category: 'Nonmetal' },
+            { symbol: 'O', name: 'Oxygen', number: 8, category: 'Nonmetal' },
+            { symbol: 'F', name: 'Fluorine', number: 9, category: 'Halogen' },
+            { symbol: 'Ne', name: 'Neon', number: 10, category: 'Noble Gas' },
+        ];
+
+        const facts = [
+            "Water is the only natural substance found in all three states - solid, liquid, and gas - on Earth.",
+            "The most abundant element in the universe is hydrogen.",
+            "The human body contains enough carbon to make 900 pencils.",
+            "Gold is the only metal that is yellow in color.",
+            "Diamonds are the hardest natural substance on Earth."
+        ];
+
+        function createPeriodicTable() {
+            const periodicTable = document.getElementById('periodicTable');
+            elements.forEach(element => {
+                const elementDiv = document.createElement('div');
+                elementDiv.className = 'card element';
+                elementDiv.innerHTML = `
+                    <div class="element-symbol">${element.symbol}</div>
+                    <div class="element-name">${element.name}</div>
+                    <div class="element-category">${element.category}</div>
+                `;
+                periodicTable.appendChild(elementDiv);
+            });
+        }
+
+        function createFactCards() {
+            const factContainer = document.getElementById('factContainer');
+            facts.forEach(fact => {
+                const factDiv = document.createElement('div');
+                factDiv.className = 'card';
+                factDiv.textContent = fact;
+                factContainer.appendChild(factDiv);
+            });
+        }
+
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+
+                    const tabContents = document.querySelectorAll('.tab-content');
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    const targetId = tab.getAttribute('aria-controls');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createPeriodicTable();
+            createFactCards();
+            setupTabs();
+        });
+    </script>
+</body>
+</html>

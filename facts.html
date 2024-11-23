@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chemistry World - Facts & Quotes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="facts.css">
     <style>
         .fact-quote {
             background-color: #fff;
@@ -25,20 +25,20 @@
 <body>
     <header>
         <div class="container">
-            <h1>Chemistry World</h1>
-            <button id="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <nav>
-                <ul>
+                <h1>ChemSpark</h1>
+                <ul id="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="instructions.html">Instructions</a></li>
-                    <li><a href="cards.html">Interactive Cards</a></li>
-                    <li><a href="facts.html">Facts & Quotes</a></li>
-                    <li><a href="memes.html">Meme Gallery</a></li>
+                    <li><a href="cards.html">StudyMaterials</a></li>
+                    <li><a href="facts.html">Facts&Quotes</a></li>
+                    <li><a href="memes.html">MemeGallery</a></li>
                 </ul>
+                <button id="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -62,6 +62,30 @@
                     <h3>Quote</h3>
                     <p>"Every aspect of the world today – even politics and international relations – is affected by chemistry." - Linus Pauling</p>
                 </div>
+                <div class="fact-quote">
+                    <h3>Fact</h3>
+                    <p>The only letter that doesn't appear on the periodic table is J.</p>
+                </div>
+                <div class="fact-quote">
+                    <h3>Quote</h3>
+                    <p>"Every aspect of the world today – even politics and international relations – is affected by chemistry." - Linus Pauling</p>
+                </div>
+                <div class="fact-quote">
+                    <h3>Fact</h3>
+                    <p>The only letter that doesn't appear on the periodic table is J.</p>
+                </div>
+                <div class="fact-quote">
+                    <h3>Quote</h3>
+                    <p>"Every aspect of the world today – even politics and international relations – is affected by chemistry." - Linus Pauling</p>
+                </div>
+                <div class="fact-quote">
+                    <h3>Fact</h3>
+                    <p>The only letter that doesn't appear on the periodic table is J.</p>
+                </div>
+                <div class="fact-quote">
+                    <h3>Quote</h3>
+                    <p>"Every aspect of the world today – even politics and international relations – is affected by chemistry." - Linus Pauling</p>
+                </div>
             </div>
         </div>
     </main>
@@ -71,12 +95,15 @@
         </div>
     </footer>
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const nav = document.querySelector('nav');
-
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('show');
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+        
+            menuToggle.addEventListener("click", () => {
+                menu.classList.toggle("show");
+            });
         });
+        
     </script>
 </body>
 </html>
